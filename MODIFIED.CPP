@@ -37,7 +37,7 @@ class lib
   }
   cout<<"enter book code             :";
   gets(bcode);
-  cout<<"enter date of issue(ddmmyy) :";
+  cout<<"enter date of issue(ddmmyyyy) :";
   cin>>time;
   l.close();
  }
@@ -49,7 +49,7 @@ class lib
   cout<<"class                  :"<<clas<<endl;
   cout<<"book name              :"<<bname<<endl;
   cout<<"book code              :"<<bcode<<endl;
-  cout<<"issuing date(ddmmyy)   :"<<time<<endl;
+  cout<<"issuing date(ddmmyyyy)   :"<<time<<endl;
  }
 };
 class book
@@ -210,12 +210,33 @@ void main()
    if(s.admno==admnosearch&&s.clas==classsearch)
    {
    s.show();
+   /*time_t t = time(NULL);
+   tm* tPtr = localtime(&t);
+   long date1= (tPtr->tm_mday);
+   long month1=(tPtr->tm_mon)+1;
+   long year1=(tPtr->tm_year)+1900;
+   string str1= to_string(s.time);  
+   long k1=str1[0]*10+ str1[1];
+   long m1=str1[2]*10+str1[3];
+   long y1=str1[4]*1000+str1[5]*100+str1[6]*10+str1[7];
+   long noofdays=(date1-k1)+(month1-m1)*30+(year1-y1)*365;
+   if(noofdays>30)
+   {
+    long cost1;
+    cout<<"Fine has been levied"<<endl;
+    cout<<"Enter the price of"<<s.bname<<endl;
+    cin>>cost1;
+    long finedisplayed=(noofdays-30)*0.1*cost1;
+    cout<<"FINE AMOUNT="<<finedisplay;
+    */
+
    c=1;
    }
   }
   l.close();
   if(c!=1)
   cout<<"Record not found"<<endl;
+  
   cout<<"return to main menu--press1"<<endl;
   cout<<"return to administrator menu---press2"<<endl;
   cout<<"exit the program----press3";
